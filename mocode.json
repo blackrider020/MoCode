@@ -1,1 +1,18 @@
-[{"_id":"Text-Layers-1590219288641","name":"Text Layers","type":"expression","creation_date":1590219288641,"expressions":[{"_id":"Box-Text-Layer-1590219312659","code":"textLayer = thisComp.layer(\"textLayer\"); //наш текстовый слой \nbbox = textLayer.sourceRectAtTime(time, true); //bounding box вокруг текста \n[bbox.width * textLayer.scale[0] / 100, bbox.height * textLayer.scale[1] / 100] + [50, 50] //ширина bbox'а плюс немного отступа по краям","name":"Box Text Layer","tags":["text layer"],"last_update":1590219365234},{"_id":"Position---Box-Text-Layer-1590219386329","code":"textLayer = thisComp.layer(\"textLayer\");\r\nbbox = textLayer.sourceRectAtTime(time, false);\r\ntextLayer.position - textLayer.anchorPoint + [bbox.left * textLayer.scale[0] / 100, bbox.top * textLayer.scale[1] / 100] + [bbox.width * textLayer.scale[0] / 100, bbox.height * textLayer.scale[1] / 100] / 2;","name":"Position | Box Text Layer","last_update":1590219390091}]}]
+[{
+    "_id": "Text-Layers-1590219288641",
+    "name": "Text Layers",
+    "type": "expression",
+    "creation_date": 1590219288641,
+    "expressions": [{
+        "_id": "Box-Text-Layer-1590219312659",
+        "code": "textLayer = thisComp.layer(\"textLayer\"); // the text layer \nbbox = textLayer.sourceRectAtTime(time, true); //bounding box вокруг текста \n[bbox.width * textLayer.scale[0] / 100, bbox.height * textLayer.scale[1] / 100] + [50, 50] //ширина bbox'а плюс немного отступа по краям",
+        "name": "Size | Box Text Layer",
+        "tags": ["text layer"],
+        "last_update": 1590219365234
+    }, {
+        "_id": "Position---Box-Text-Layer-1590219386329",
+        "code": "textLayer = thisComp.layer(\"textLayer\");\r\nbbox = textLayer.sourceRectAtTime(time, false);\r\ntextLayer.position - textLayer.anchorPoint + [bbox.left * textLayer.scale[0] / 100, bbox.top * textLayer.scale[1] / 100] + [bbox.width * textLayer.scale[0] / 100, bbox.height * textLayer.scale[1] / 100] / 2;",
+        "name": "Position | Box Text Layer",
+        "last_update": 1590219390091
+    }]
+}]
