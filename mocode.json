@@ -1,18 +1,1 @@
-[{
-    "_id": "Text-Layers-1590219288641",
-    "name": "Text Layers",
-    "type": "expression",
-    "creation_date": 1590219288641,
-    "expressions": [{
-        "_id": "Box-Text-Layer-1590219312659",
-        "code": "textLayer = thisComp.layer(\"textLayer\"); //the text layer \nbbox = textLayer.sourceRectAtTime(time, true); //bounding box around the text \n[bbox.width * textLayer.scale[0] / 100, bbox.height * textLayer.scale[1] / 100] + [50, 50] //width of the bbox plus a little indentation around the edges",
-        "name": "Box Text Layer",
-        "tags": ["text layer"],
-        "last_update": 1590219365234
-    }, {
-        "_id": "Position---Box-Text-Layer-1590219386329",
-        "code": "textLayer = thisComp.layer(\"textLayer\");\r\nbbox = textLayer.sourceRectAtTime(time, false);\r\ntextLayer.position - textLayer.anchorPoint + [bbox.left * textLayer.scale[0] / 100, bbox.top * textLayer.scale[1] / 100] + [bbox.width * textLayer.scale[0] / 100, bbox.height * textLayer.scale[1] / 100] / 2;",
-        "name": "Position | Box Text Layer",
-        "last_update": 1590219390091
-    }]
-}]
+[{"_id":"Expressions-1590222616917","name":"Expressions","type":"expression","creation_date":1590222616917,"expressions":[{"code":"L = thisComp.layer(\"Shape Layer\");\r\nxPad = 50;\r\nyPad = 50;\r\nrL = L.sourceRectAtTime(time, false);\r\nr = sourceRectAtTime(time, false);\r\nhisUL = L.toComp([rL.left, rL.top]);\r\nhisLR = L.toComp([rL.left + rL.width, rL.top + rL.height]);\r\nmyUL = toComp([r.left, r.top]);\r\nmyLR = toComp([r.left + r.width, r.top + r.height]);\r\nw = (hisLR[0] - hisUL[0]) / (myLR[0] - myUL[0]);\r\nh = (hisLR[1] - hisUL[1]) / (myLR[1] - myUL[1]);\r\n[value[0] * h - xPad / 10, value[1] * h - yPad / 10]","name":"Scale Text inside Shape","creation_date":1590222638037,"last_update":1590222638037,"_id":"Scale-Text-inside-Shape-1590222638037"}]},{"_id":"Text-Layers-1590219288641","name":"Text Layers","type":"expression","expressions":[{"_id":"Box-Text-Layer-1590219312659","code":"textLayer = thisComp.layer(\"textLayer\"); //our text layer\nbbox = textLayer.sourceRectAtTime(time, true); //bounding box around the text\n[bbox.width * textLayer.scale[0] / 100, bbox.height * textLayer.scale[1] / 100] + [50, 50] //width of the box plus a little indentation around the edges","name":"Size | Box Text Layer","tags":["text layer"],"last_update":1590223033153},{"_id":"Position---Box-Text-Layer-1590219386329","code":"textLayer = thisComp.layer(\"textLayer\");\r\nbbox = textLayer.sourceRectAtTime(time, false);\r\ntextLayer.position - textLayer.anchorPoint + [bbox.left * textLayer.scale[0] / 100, bbox.top * textLayer.scale[1] / 100] + [bbox.width * textLayer.scale[0] / 100, bbox.height * textLayer.scale[1] / 100] / 2;","name":"Position | Box Text Layer","last_update":1590219390091}]}]
