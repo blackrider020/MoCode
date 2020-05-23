@@ -5,8 +5,8 @@
     "creation_date": 1590219288641,
     "expressions": [{
         "_id": "Box-Text-Layer-1590219312659",
-        "code": "textLayer = thisComp.layer(\"textLayer\"); // the text layer \nbbox = textLayer.sourceRectAtTime(time, true); //bounding box вокруг текста \n[bbox.width * textLayer.scale[0] / 100, bbox.height * textLayer.scale[1] / 100] + [50, 50] //ширина bbox'а плюс немного отступа по краям",
-        "name": "Size | Box Text Layer",
+        "code": "textLayer = thisComp.layer(\"textLayer\"); //the text layer \nbbox = textLayer.sourceRectAtTime(time, true); //bounding box around the text \n[bbox.width * textLayer.scale[0] / 100, bbox.height * textLayer.scale[1] / 100] + [50, 50] //width of the bbox plus a little indentation around the edges",
+        "name": "Box Text Layer",
         "tags": ["text layer"],
         "last_update": 1590219365234
     }, {
